@@ -37,8 +37,9 @@ export class PracticeFormPage extends BasePage{
         return cy.get('.react-datepicker__month-select');
     }
 
-    static getBirthDateDay(day){
-        return cy.contains('.react-datepicker__day', day);
+    static getBirthDateDay(day, month, year){
+        const formattedDate = `${month} ${day}th, ${year}`;
+        return cy.get(`[aria-label*="${formattedDate}"]`);
     }
 
     static get subjectField(){
@@ -67,5 +68,9 @@ export class PracticeFormPage extends BasePage{
 
     static get submitButton(){
         return cy.get('#submit');
+    }
+
+    static get tableSubmittedForm(){
+        return cy.get('.table');
     }
 }
