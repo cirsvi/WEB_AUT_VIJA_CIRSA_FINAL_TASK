@@ -30,7 +30,7 @@ describe('Demo QA - Practice Form', () => {
     PracticeFormPage.birthDateField.click();
     
     PracticeFormPage.birthDateYearSelect.select(birthYear);
-    PracticeFormPage.birthDateMonthSelect.select('1');
+    PracticeFormPage.birthDateMonthSelect.select(birthMonth);
     PracticeFormPage.getBirthDateDay(birthDay, birthMonth, birthYear).click();
 
     
